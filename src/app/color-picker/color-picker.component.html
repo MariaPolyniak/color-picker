@@ -1,0 +1,32 @@
+<div class="color-picker">
+  <div>
+    <h1 class="title">Material colors</h1>
+
+    <div
+      class="selected-color-option"
+      data-testid="selectedColorOption"
+      [style.background-color]="selectedColorID"
+      [style.color]="checkIconColorID"
+      *ngIf="selectedColorID"
+    >
+      &#10003;
+    </div>
+
+    <div
+      class="color-option-placeholder"
+      *ngIf="!selectedColorID"
+    >
+      No color selected...
+    </div>
+  </div>
+
+  <div class="color-option-list">
+    <div
+      class="color-option"
+      data-testid="colorOption"
+      *ngFor="let color of availableColors"
+      [style.background-color]="color.colorID"
+      (click)="selectColor(color.colorID)"
+    ></div>
+  </div>
+</div>
