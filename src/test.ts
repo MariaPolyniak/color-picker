@@ -7,6 +7,14 @@ import {
   platformBrowserDynamicTesting
 } from '@angular/platform-browser-dynamic/testing';
 
+// @ts-ignore
+import JasmineDOM from '@testing-library/jasmine-dom';
+
+
+beforeAll(() => {
+  jasmine.addMatchers(JasmineDOM);
+});
+
 declare const require: {
   context(path: string, deep?: boolean, filter?: RegExp): {
     keys(): string[];

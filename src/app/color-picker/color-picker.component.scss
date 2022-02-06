@@ -1,0 +1,68 @@
+@mixin color-option {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  box-shadow: -1px 4px 7px 0 rgba(0, 0, 0, 0.4);
+}
+
+.color-picker {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 280px;
+  padding: 1rem;
+
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  box-shadow: -6px 5px 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  margin: 0;
+
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.selected-color-option {
+  @include color-option;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0.5rem 0.3rem;
+
+  transition: background-color 300ms ease-in;
+}
+
+.color-option-placeholder {
+  height: 30px;
+  margin: 0.5rem 0;
+
+  color: #999999;
+}
+
+.color-option {
+  @include color-option;
+
+  display: inline-block;
+
+  margin: 0.3rem;
+
+  cursor: pointer;
+
+  &:active {
+    transform: translateY(-2px);
+    box-shadow: -1px 4px 12px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+
